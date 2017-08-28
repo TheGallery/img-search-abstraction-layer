@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Image Search Abstraction Layer</title>
+  <style>
+    code {
+      padding: 1px;
+      background-color: #e0e0ff;
+      color: #3f3fe4;
+    }
+
+    h3::before {
+      content: "\003E";
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Search Abstraction Layer</h1>
+  <p>
+    This API is an abstraction of <a href="https://apidocs.imgur.com/" target="_blank">Imgur's API</a>. You can search Imgur galleries and see your search history. <br />
+    Check the endpoints and the examples below.
+  </p>
+  <h2>Endpoints:</h2>
+  <section>
+    <h3><code>https://floating-wildwood-37090.herokuapp.com/api/search/{query}</code></h3>
+    Returns an array with image details based on the query provided.
+    <h4>Parameters</h4>
+    <code>{query}</code>: The search term.</li>
+    <h4>Query Parameters</h4>
+    <code>[?offset=n]</code> (optonal): You can pass this parameter to get the n-th result page.
+    <h4>Example usage:</h4>
+    <code>https://floating-wildwood-37090.herokuapp.com/api/search/dogs?offset=3</code>
+    <h4>Example output:</h4>
+    <code>
+      [{"url":"http://i.imgur.com/kS0pAwr.png","description":"At least some Police agencies know how to interact with dogs.","context":"https://i.imgur.com/kS0pAwr"},{"url":"http://i.imgur.com/Bd4EFsp.gif","description":"Dogs have invented cookie-powered teleportation. We haven't even figured out renewable energy yet.","context":"https://i.imgur.com/Bd4EFsp"}, ...]
+    </code>
+  </section>
+  <section>
+    <h3><code>https://floating-wildwood-37090.herokuapp.com/api/history</code></h3>
+    Get the last 10 queries and the time they were performed.
+    <h4>Example usage:</h4>
+    <code>https://floating-wildwood-37090.herokuapp.com/api/history</code>
+    <h4>Example output:</h4>
+    <code>
+      [{"query":"dogs","time":"2017-08-28T16:26:54.312Z"},{"query":"greece13dasd","time":"2017-08-28T12:33:55.077Z"},{"query":"greece","time":"2017-08-28T12:33:48.727Z"},{"query":"funny bro","time":"2017-08-28T12:33:36.141Z"},{"query":"funny bro","time":"2017-08-28T12:33:27.441Z"},{"query":"funny child","time":"2017-08-28T12:33:19.691Z"},{"query":"funny child","time":"2017-08-28T12:28:47.676Z"},{"query":"big trucks","time":"2017-08-28T12:28:20.002Z"},{"query":"cats","time":"2017-08-28T12:15:16.820Z"},{"query":"cats","time":"2017-08-28T12:15:11.782Z"}]
+    </code>
+  </section>
+</body>
+</html>

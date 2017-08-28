@@ -1,0 +1,18 @@
+{
+  "name": "img-search",
+  "version": "1.0.0",
+  "description": "FCC's Image Search Abstraction Layer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joseph Psychas <iopsychas@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "4.0.0",
+    "express": "4.15.4",
+    "mongodb": "2.2.31",
+    "node-fetch": "1.7.2"
+  }
+}
